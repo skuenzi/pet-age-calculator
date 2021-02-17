@@ -22,26 +22,19 @@ const result = document.querySelector('#result')
 button.addEventListener('click', calculateAge)
 
 function calculateAge() {
-    
+    let humanAge = input.value
     // human  1-15 = 1 cat 
     // human  16-24 = 2 cat
     //      25-28 = 3 cat
     //      28-60 = +1 for every 4 years: Math.round(3 + (input.value - 28)/4)
-    if (input.value <= 15) {
-        result.innerText = 1
-    } else if (input.value <= 24) {
-        result.innerText = 2
-    } else if (input.value <= 28) {
-        result.innerText = 3
-    } else {
-        result.innerText = Math.round(3 + (input.value - 28)/4)
-    }
     
-    
+    result.innerText = 
+        humanAge <= 15 ? 1
+        :  humanAge <= 24 ? 2
+        : humanAge <= 28 ? 3
+        : Math.round(3 + (input.value - 28)/4)
     
 }
-
-
 
 
 
