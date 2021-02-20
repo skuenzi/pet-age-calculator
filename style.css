@@ -1,11 +1,12 @@
 body {
-    background-color: #94C9A9;
+    background-color: #135fa1;
     display: flex;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
     width: 250px;
-    background-color: #C6ECAE;
+    background-color: #98c5ed;
     border-radius: 20px;
     margin: 60px;
     display: flex;
@@ -13,12 +14,21 @@ body {
     padding: 40px;
 
 }
-
+.button-container {
+    margin: 0 auto .3em;
+    height: 50px;
+    font-size: 3.5em;
+}
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    outline: 0;
+    font-size: 100%;
+}
 .button {
-    background-color: #FE5F55;
-    border-radius: 10px;
-    width: 200px;
-    height: 30px;
+    border-style: none;
+    font-size: 90%;
+    background-color: #98c5ed;
     align-self: center;
 }
 
@@ -26,10 +36,34 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     height: 30px;
+    border: none;
+    border-bottom: #062440 2px solid;
+    background: #98c5ed;
+    text-align: center;
+    font-size: 1.5em;
+}
+input:focus {
+    outline: none;
 }
 
 #result {
-    color: #181A25;
+    color: #062440;
+    border: 5px #062440 solid;
+    border-radius: 10px;
+    padding: .2em 1em;;
     font-size: 50px;
     align-self: center;
+}
+.switch-animal-button {
+    font-size: 2em;
+    
+}
+.footer {
+    text-decoration: none;
+    font-size: .7em;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .04em;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
