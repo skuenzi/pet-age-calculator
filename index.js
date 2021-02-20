@@ -19,34 +19,47 @@ const input = document.querySelector('#input')
 const result = document.querySelector('#result')
 
 
+
 button.addEventListener('click', calculateAge)
+input.addEventListener('keyup', e => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        calculateAge();
+    }
+})
+
 
 function calculateAge() {
     let humanAge = input.value
-    // human  1-15 = 1 cat 
+    // Calculations:  human  1-15 = 1 cat 
     // human  16-24 = 2 cat
     //      25-28 = 3 cat
     //      28-60 = +1 for every 4 years: Math.round(3 + (input.value - 28)/4)
     
     result.innerText = 
-        humanAge <= 15 ? 1
-        :  humanAge <= 24 ? 2
+        !humanAge || humanAge == 0 ? 0
+        : humanAge <= 1 ? '1 month'
+        : humanAge <= 4 ? '3 months'
+        : humanAge <= 10 ? '6 months'
+        : humanAge <= 15 ? 1
+        : humanAge <= 24 ? 2
         : humanAge <= 28 ? 3
-        : Math.round(3 + (input.value - 28)/4)
-    
+        : Math.round(3 + (input.value - 28)/4);
 }
 
 
-
 /*
-
 DETAILED INSTRUCTIONS
 1. pick out the neccesary elements from the HTML
 2. use the input value and convert it into dog years on 'click'
 3. display the result in the h1 tag
-
 STRETCH GOALS:
 - Can you convert your age into dog years, months and days? 
 - Can you improve the overall design?
-
+    [x] Change button to cat emoji
+    [x] change font
+    [x] change color scheme
+    [] include 'calculations' graphic
+- Add 'dog' radial button to switch to dog years
+    repeat app for dog years
 */
